@@ -1,2 +1,3 @@
 # Movie_Channel
-This project is about the movie channel website only by using pure HTML and CSS. 
+
+This movie channel project is the mini project which is created by using pure HTML and CSS. 
