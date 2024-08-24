@@ -1,0 +1,498 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: "Lora", serif;
+}
+
+/* global variables */
+:root{
+    --bg-color: black;
+    --main-text-color: white;
+    --logo-color: red;
+}
+
+
+/* navbar starts */
+
+header{
+    width: 100%;
+    box-shadow: 0 0 18px 3px rgba(89, 89, 89, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    top: 0;
+    position: fixed;
+    display: flex;
+    padding: 5px 10px;
+    justify-content: space-between;
+    font-size: 17px;
+    z-index: 2;
+}
+
+header::-webkit-scrollbar{
+    backdrop-filter: blur(10px);
+}
+
+.logo{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3px 10px;
+    align-items: center;
+    color: var(--main-text-color);
+    font-weight: bold;
+}
+
+.logo i{
+    font-size: 33px;
+    margin-right: 10px;
+    color: var(--logo-color);
+}
+
+.navbar-menu{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    column-gap: 50px;
+    transition: 0.5s;
+}
+
+.navbar-menu li a{
+    color: var(--main-text-color);
+}
+
+.navbar-menu li:hover{
+    scale: 1.2;
+    text-shadow: 20px;
+}
+
+.navbar-info{
+    display: flex;
+    padding: 5px 10px;
+    margin-right: 30px;
+}
+
+.navbar-info i{
+    color: white;
+    padding: 15px 10px;
+    font-size: 18px;
+}
+
+/* navbar ends */
+
+
+/* cover image starts */
+.cover{
+    width: 100%;
+    height: auto;
+}
+
+.cover-img{
+    width: 100%;
+    min-height: 700px;
+    position: relative;
+    display: flex;
+    align-items: center; 
+}
+
+.cover-img img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    
+}
+
+.cover-text{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--main-text-color);
+    row-gap: 20px;
+    letter-spacing: 7px;
+}
+
+.cover-text span{
+    text-transform: uppercase;
+}
+
+.cover-text h1{
+    font-size: 45px;
+}
+
+.cover-btn{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover-btn button{
+    width: 200px;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 50px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+}
+
+.cover-btn button a{
+    color: var(--main-text-color);
+}
+
+.view-btn{
+    background-color: #8D4919;
+}
+
+.view-btn:hover, .play-btn:hover{
+    box-shadow: 10px 20px 30px rgba(89, 89, 89, 0.3);
+    cursor: pointer;
+}
+
+.play-btn{
+    background-color: #4B0F3B;
+}
+
+.play-btn a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bx-play-circle{
+    font-size: 23px;
+    margin-left: 10px;
+}
+/* cover image ends */
+
+
+/* multi-movies start */
+.movie-grid{
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    position: relative;
+    align-items: center;
+}
+
+.movie-section{
+    max-width: 100%;
+    min-height: 250px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie-section img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.movie-cover-text{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-text-color);
+    letter-spacing: 3px;
+}
+
+.movie-cover-text h3{
+    font-size: 30px;
+}
+
+.movie-title{
+    position: relative;
+    text-align: center;
+}
+
+.movie-title::after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: red;
+    bottom: -9px;
+}
+
+.see-more{
+    padding-top: 15px;
+}
+
+.see-more:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+/* multi-movies end */
+
+/* popular movies start */
+.popular-title{
+    max-width: 900px;
+    margin: 30px 25px;
+    position: relative;
+}
+
+.popular-title::after{
+    content: "";
+    width: 180px;
+    height: 5px;
+    display: flex;
+    position: absolute;
+    background-color: red;
+    bottom: -9px;
+}
+
+.popular-grid{
+    width: 95%;
+    margin: 0px auto 0px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, auto));
+    position: relative;
+    align-items: center;
+    gap: 1rem;
+}
+
+.popular-section{
+    width: 100%;
+    min-height: 450px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.popular-section img{
+    width: 100%;
+    height: 450px;
+    position: absolute;
+    z-index: -1;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.popular-cover-text{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: var(--main-text-color);
+    letter-spacing: 2px;
+    transition: 0.3s;
+    
+}
+
+.popular-cover-text:hover{
+    border: 10px double;
+    transform: scale(1.0);
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6);
+    
+}
+
+.popular-cover-text h4{
+    font-size: 30px;
+    padding: 10px 20px;
+}
+
+.popular-cover-text span{
+    padding: 0 20px;
+}
+/* popular movies end */
+
+/* UpComing starts */
+.upComing-img{
+    width: 100%;
+    margin: 0px auto 0px auto;
+    min-height: 580px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.upComing-img img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    
+}
+.upComing-head{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.upComing-text{
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0 20px;
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--main-text-color);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.upComing-text h1{
+    font-size: 35px;
+}
+
+.upcome-header{
+    margin-bottom: 20px;
+}
+
+.stream{
+    margin: 20px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.bxs-bell-ring{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.upcoming-btn{
+    padding: 12px;
+    border-radius: 50px;
+    font-size: 18px;
+    background-color: var(--logo-color);
+    border: none;
+    color: white;
+}
+
+.upcoming-btn:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+/* UpComing ends */
+
+/* footer starts */
+footer{
+    background-color: rgb(73, 73, 73);
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo{
+    display: flex;
+    flex-wrap: wrap;
+    /* padding: 10px 10px; */
+    align-items: center;
+    color: var(--main-text-color);
+    font-weight: bold;
+}
+
+.footer-logo .bx-camera-movie{
+    font-size: 33px;
+    margin-right: 5px;
+    color: var(--logo-color);
+}
+
+.icons i{
+    color: white;
+    padding: 15px 10px;
+    font-size: 25px;
+}
+
+.quick-links a{
+    padding: 5px 10px;
+    color: var(--main-text-color);
+    transition: 0.5s;
+}
+
+.quick-links a:hover{
+    text-decoration: underline;
+}
+/* footer ends */
+
+/* responsive design starts */
+@media (max-width: 1080px) {
+    .movie-grid{
+        grid-template-columns: repeat(align-items, minmax(360px, auto));
+    }
+
+    .popular-section{
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 991px){
+    .cover-img{
+        min-height: 600px;
+    }
+    .movie-grid{
+        grid-template-columns: repeat(auto-fit, minmax(360px, auto));
+    }
+
+    .upComing-img{
+        min-height: 550px;
+    }
+}
+
+@media (max-width: 900px){
+    header{
+        padding: 5px 2%;
+    }
+    .navbar-menu{
+        display: none;
+    }
+}
+
+@media (max-width: 470px){
+    .cover-img {
+        min-height: 550px;
+        justify-content: center;
+    }
+
+    .upComing-img{
+        min-height: 530px;
+    }
+}
+
+@media (max-width: 370px){
+    .cover-img{
+        min-height: 540px;
+    }
+
+    .upComing-img{
+        min-height: 500px;
+    }
+}
+/* responsive design ends */
